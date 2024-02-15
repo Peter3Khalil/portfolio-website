@@ -37,7 +37,7 @@ const Header = () => {
 const MobileMenu = ({ isOpen, toggleMenu }) => {
   return (
     <div
-      className={`fixed z-10 right-0 top-0 flex h-screen w-full transition-all duration-700 ease-in-out ${
+      className={`fixed z-10 right-0 top-0 flex h-full w-full transition-all duration-700 ease-in-out ${
         isOpen ? 'translate-x-0':'translate-x-full'
       }`}
     >
