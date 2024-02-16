@@ -3,7 +3,8 @@ import SectionWrapper from '../SectionWrapper';
 import Container from '../Container';
 import { useForm } from 'react-hook-form';
 import { cn } from '../../utils/helperFunctions';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 const emailRegex = /^[a-z0-9._-]+@[a-z]+\.com$/;
@@ -37,10 +38,7 @@ const Contact = () => {
       const result = await res.json();
       setIsLoading(false);
       reset();
-
-      setTimeout(() => {
-        alert(result.message);
-      }, 100);
+      toast.success(result.message);
     } catch (error) {
       alert('An error occurred while sending the message.');
     } finally {
@@ -87,6 +85,17 @@ const Contact = () => {
           </button>
         </form>
       </Container>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnHover
+        icon={false}
+        bodyStyle={{borderLeft: '4px solid hsl(var(--primary))',backgroundColor: 'var(--background)',color: 'var(--foreground)',borderRadius: 'var(--radius)'}}
+      />
     </SectionWrapper>
   );
 };
