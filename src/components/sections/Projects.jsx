@@ -27,8 +27,8 @@ const Projects = () => {
         'Web application that allows users to get random advice every time they click the button.',
       img: '/project3.png',
       demo: 'https://vocal-baklava-b46e14.netlify.app/',
-      source: 'https://github.com/Peter3Khalil/generate_random_advice'
-    }
+      source: 'https://github.com/Peter3Khalil/generate_random_advice',
+    },
   ];
   return (
     <SectionWrapper id="projects">
@@ -62,14 +62,19 @@ const Card = ({ title, description, img, demo, source }) => {
     </button>
   );
   return (
-    <div className="flex w-full cursor-pointer flex-col items-start gap-2 rounded border bg-background p-4 text-foreground hover:bg-accent dark:border-foreground/20 hover:dark:bg-card md:w-[350px]">
+    <div
+      onClick={() => {
+        window.open(demo, '_blank');
+      }}
+      className="flex w-full cursor-pointer flex-col items-start gap-2 rounded border bg-background p-4 text-foreground hover:bg-accent dark:border-foreground/20 hover:dark:bg-card md:w-[350px]"
+    >
       <img
         src={img}
         alt={title}
         className="h-52 w-full object-cover object-top"
       />
       <div className="text-left">
-        <h3 className="text-xl font-bold text-primary capitalize">{title}</h3>
+        <h3 className="text-xl font-bold capitalize text-primary">{title}</h3>
         <p className="text-md text-muted-foreground">{description}</p>
       </div>
       <menu className="flex gap-4">
