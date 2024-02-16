@@ -1,7 +1,6 @@
 import React from 'react';
 import Header, { socials } from '../components/Header';
 import Hero from '../components/Hero';
-import Services from '../components/Services';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -12,7 +11,6 @@ const Home = () => {
       <Header />
       <div className='w-full h-[20vh] flex-grow overflow-auto'>
         <Hero />
-        <Services />
         <Projects />
         <Contact />
       <Footer/>
