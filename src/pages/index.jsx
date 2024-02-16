@@ -21,7 +21,7 @@ const Home = () => {
 
       <ul
         role="navigation"
-        className="fixed border-t bottom-0 left-0 flex h-14 w-full items-center justify-between bg-primary px-4 md:hidden"
+        className="fixed border-t dark:border-foreground/30 bottom-0 left-0 flex h-14 w-full items-center justify-between bg-primary px-4 md:hidden"
       >
         {links.map((link) => {
           return (
