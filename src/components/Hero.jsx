@@ -7,8 +7,6 @@ const Hero = () => {
     link.href = '/pdf.pdf';
     link.download =  `${user.firstName} ${user.lastName}-Resume.pdf`;
     link.click();
-    document.body.appendChild(link);
-    document.body.removeChild(link);
   };
   return (
     <SectionWrapper className={'lg:flex-row lg:justify-between'} id="hero">
@@ -18,7 +16,6 @@ const Hero = () => {
           alt="Profile Picture"
           className="h-full w-full rounded-full object-cover"
         />
-        {/* Add tint */}
         <div className="absolute inset-0 m-1 rounded-full bg-primary/20"> </div>
       </div>
 

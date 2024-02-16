@@ -1,4 +1,4 @@
-import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiFillMail,AiOutlineWhatsApp } from 'react-icons/ai';
 
 export const socials = [
   {
@@ -7,6 +7,8 @@ export const socials = [
   },
   { icon: <AiFillGithub />, link: 'https://github.com/Peter3Khalil' },
   { icon: <AiFillMail />, link: 'mailto:peter.khalil.fahmy@gmail.com' },
+  { icon: <AiOutlineWhatsApp />, link: 'https://wa.me/+201201920343' },
+
 ];
 
 export const links = [{name:'Home',id:"hero"},{name:'Services',id:"services"},{name:"Projects",id:"projects"},{name:'Contact',id:"contact"}];
