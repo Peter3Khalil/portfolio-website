@@ -12,7 +12,7 @@ const Home = () => {
       <div className="flex h-auto w-full flex-col overflow-auto">
         <div id="container" className="h-auto">
           {links.map((link) => (
-            <React.Fragment key={link.id}>{link.section}</React.Fragment>
+            <React.Fragment key={link.id}>{<link.section/>}</React.Fragment>
           ))}
         </div>
         <Footer />

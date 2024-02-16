@@ -30,8 +30,8 @@ export const socials = [
 ];
 
 export const links = [
-  { name: 'Home', id: 'hero', section: <Hero /> },
-  { name: 'Projects', id: 'projects', section: <Projects /> },
-  { name: 'About', id: 'about', section: <About /> },
-  { name: 'Contact', id: 'contact', section: <Contact /> },
+  { name: 'Home', id: 'hero', section: Hero },
+  { name: 'Projects', id: 'projects', section: Projects  },
+  { name: 'About', id: 'about', section: About },
+  { name: 'Contact', id: 'contact', section: Contact },
 ];
