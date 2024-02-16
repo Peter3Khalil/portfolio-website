@@ -1,8 +1,9 @@
 import React from 'react';
 import { links, socials } from '../../public/data';
 import { AiOutlineClose } from 'react-icons/ai';
+import { cn } from '../utils/helperFunctions';
 
-const MobileMenu = ({ isOpen, closeMenu }) => {
+const MobileMenu = ({ isOpen, closeMenu,activeLink }) => {
   return (
     <div
       className={`fixed right-0 top-0 z-10 flex h-full w-full transition-all duration-700 ease-in-out ${
@@ -25,7 +26,9 @@ const MobileMenu = ({ isOpen, closeMenu }) => {
                   .scrollIntoView({ behavior: 'smooth' });
               }}
               key={link.id}
-              className="flex h-14 w-full cursor-pointer items-center border-b transition-all duration-300 ease-in-out hover:border-primary dark:border-foreground/20 dark:hover:border-primary"
+              className={cn("flex h-14 w-full cursor-pointer items-center border-b transition-all duration-300 ease-in-out hover:border-primary dark:border-foreground/20 dark:hover:border-primary",{
+                'border-primary': activeLink === link.id,
+              })}
             >
               {link.name}
             </li>
