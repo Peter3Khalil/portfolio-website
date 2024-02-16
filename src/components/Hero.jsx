@@ -45,7 +45,7 @@ const Hero = () => {
 
         <menu className="flex flex-col gap-4 lg:flex-row">
           <button className="w-full rounded-md bg-primary px-6 py-2 text-lg font-bold text-white lg:w-fit">
-            <a href="/pdf.pdf" download={true}>
+            <a href="/pdf.pdf" download={"peter.pdf"}>
               Download CV
             </a>
           </button>

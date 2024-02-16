@@ -6,7 +6,7 @@ const Services = () => {
   return (
     <SectionWrapper
     id="services"
-      className={''}
+      className={'h-auto'}
     >
      <BoxesContainer sectionName={"Services"}/>
     </SectionWrapper>
