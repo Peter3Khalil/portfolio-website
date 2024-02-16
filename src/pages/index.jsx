@@ -10,7 +10,7 @@ const Home = () => {
     <main className="flex h-[100svh] w-full flex-col bg-background text-foreground transition-all duration-500 ease-in-out">
       <Header activeLink={visibleElement?.id} />
       <div className="flex h-auto w-full flex-col overflow-auto">
-        <div id="container" className="">
+        <div id="container" className="h-auto">
           {links.map((link) => (
             <React.Fragment key={link.id}>{link.section}</React.Fragment>
           ))}

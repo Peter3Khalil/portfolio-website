@@ -19,7 +19,7 @@ const schema = yup.object().shape({
 });
 const Contact = () => {
   const [isLoading, setIsLoading] = React.useState(false);
-  const { handleSubmit, register, formState } = useForm({
+  const { handleSubmit, register, formState,reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
@@ -36,6 +36,8 @@ const Contact = () => {
       });
       const result = await res.json();
       setIsLoading(false);
+      reset();
+
       setTimeout(() => {
         alert(result.message);
       }, 100);
