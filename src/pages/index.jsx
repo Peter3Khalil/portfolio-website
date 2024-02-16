@@ -32,7 +32,7 @@ const Home = () => {
                   .scrollIntoView({ behavior: 'smooth' });
               }}
               className={cn(
-                'border-t-4 h-full flex items-center justify-center border-transparent text-muted',
+                'border-t-4 h-full flex items-center justify-center cursor-pointer border-transparent text-muted',
                 {
                   'border-background text-primary-foreground font-bold':
                     link.id === visibleElement?.id,
