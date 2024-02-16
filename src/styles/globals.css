@@ -66,6 +66,19 @@ html{
   height: 100svh;
 }
 
+::-webkit-scrollbar {
+  width: 6px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--primary-foreground)); /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary)); /* color of the thumb */
+  border-radius: 5px; /* roundness of the thumb */
+}
+
 
 
   

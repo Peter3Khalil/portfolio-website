@@ -1,0 +1,47 @@
+import React from 'react';
+import { links, socials } from '../../public/data';
+import { AiOutlineClose } from 'react-icons/ai';
+
+const MobileMenu = ({ isOpen, toggleMenu }) => {
+  return (
+    <div
+      className={`fixed right-0 top-0 z-10 flex h-full w-full transition-all duration-700 ease-in-out ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}
+    >
+      {/* Modal */}
+      <div onClick={toggleMenu} className="h-full w-full bg-foreground/5"></div>
+      <nav className="relative flex h-full w-[70%] shrink-0 flex-col gap-10 bg-background p-6 text-foreground">
+        <button onClick={toggleMenu} className="self-end text-2xl">
+          <AiOutlineClose />
+        </button>
+        <ul className="flex flex-col gap-2">
+          {links.map((link, i) => (
+            <li
+              onClick={() => {
+                document
+                  .getElementById(link.id)
+                  .scrollIntoView({ behavior: 'smooth' });
+              }}
+              key={link.id}
+              className="flex h-14 w-full cursor-pointer items-center border-b transition-all duration-300 ease-in-out hover:border-primary dark:border-foreground/20 dark:hover:border-primary"
+            >
+              {link.name}
+            </li>
+          ))}
+        </ul>
+        <ul className="absolute bottom-0 left-0 flex h-14 w-full shrink-0 items-center justify-center gap-6 border-t dark:border-foreground/20">
+          {socials.map((social, i) => (
+            <li key={i} className="text-3xl text-primary">
+              <a target="_blank" href={social.link}>
+                {social.icon}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  );
+};
+
+export default MobileMenu;

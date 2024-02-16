@@ -2,15 +2,15 @@ import React from 'react';
 import SectionWrapper from './SectionWrapper';
 import BoxesContainer from './BoxesContainer';
 
-const Services = () => {
+const Projects = () => {
   return (
     <SectionWrapper
-    id="services"
+      id="projects"
       className={''}
     >
-     <BoxesContainer sectionName={"Services"}/>
+      <BoxesContainer sectionName={"Projects"}/>
     </SectionWrapper>
   );
 };
 
-export default Services;
+export default Projects;

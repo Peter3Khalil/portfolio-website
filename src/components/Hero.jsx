@@ -3,7 +3,7 @@ import { socials, user } from '../../public/data';
 import SectionWrapper from './SectionWrapper';
 const Hero = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper className={"lg:flex-row lg:justify-between"} id="hero">
       <div className="relative h-52 w-52 shrink-0 rounded-full border-[6px] border-primary p-1 lg:order-2 lg:h-96 lg:w-96">
         <img
           src={user.image}

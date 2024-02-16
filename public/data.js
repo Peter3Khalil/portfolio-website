@@ -9,7 +9,7 @@ export const socials = [
   { icon: <AiFillMail />, link: 'mailto:peter.khalil.fahmy@gmail.com' },
 ];
 
-export const links = ['Home', 'Services', 'Projects', 'Contact'];
+export const links = [{name:'Home',id:"hero"},{name:'Services',id:"services"},{name:"Projects",id:"projects"},{name:'Contact',id:"contact"}];
 
 export const user = {
   firstName: 'Peter',
