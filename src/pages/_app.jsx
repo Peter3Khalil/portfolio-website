@@ -16,6 +16,16 @@ const ThemeProvider = ({ children }) => {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
+  //store it in localStorage
+  React.useEffect(() => {
+    const localTheme = window.localStorage.getItem('theme');
+    if (localTheme) {
+      setTheme(localTheme);
+    }
+  }, []);
+  React.useEffect(() => {
+    window.localStorage.setItem('theme', theme);
+  }, [theme]);
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
@@ -24,10 +34,6 @@ const ThemeProvider = ({ children }) => {
 };
 const ThemeConsumer = ({ children }) => {
   const { theme } = React.useContext(ThemeContext);
-  return (
-    <div className={theme}>
-      {children}
-    </div>
-  );
+  return <div className={theme}>{children}</div>;
 };
 export { ThemeContext, ThemeProvider };
