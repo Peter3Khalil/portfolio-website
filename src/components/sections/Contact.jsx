@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionWrapper from './SectionWrapper';
-import Container from './Container';
+import SectionWrapper from '../SectionWrapper';
+import Container from '../Container';
 import { useForm } from 'react-hook-form';
-import { cn } from '../utils/helperFunctions';
+import { cn } from '../../utils/helperFunctions';
 
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -46,12 +46,12 @@ const Contact = () => {
     }
   };
   return (
-    <SectionWrapper id="contact" className={''}>
+    <SectionWrapper id="contact">
       <Container
         sectionName={'Contact Me'}
-        className={'w-full px-6 md:w-[60%]'}
+        className={'w-full md:w-[60%]'}
       >
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full">
           <Input name="name" register={register} error={errors.name && errors.name.message} />
           <Input name="email" register={register} error={errors.email && errors.email.message} />
 

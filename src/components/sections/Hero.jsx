@@ -1,6 +1,6 @@
 import React from 'react';
-import { socials, user } from '../../public/data';
-import SectionWrapper from './SectionWrapper';
+import { socials, user } from '../../../public/data';
+import SectionWrapper from '../SectionWrapper';
 const Hero = () => {
   const downloadCv = () => {
     const link = document.createElement('a');
@@ -9,7 +9,7 @@ const Hero = () => {
     link.click();
   };
   return (
-    <SectionWrapper className={'lg:flex-row lg:justify-between'} id="hero">
+    <SectionWrapper className={'lg:flex-row lg:justify-between justify-center h-[calc(100svh-4rem)]'} id="hero">
       <div className="relative h-52 w-52 shrink-0 rounded-full border-[6px] border-primary p-1 lg:order-2 lg:h-96 lg:w-96">
         <img
           src={user.image}
@@ -49,10 +49,12 @@ const Hero = () => {
         </ul>
 
         <menu className="flex flex-col gap-4 lg:flex-row">
-          <button onClick={downloadCv} className="w-full rounded-md bg-primary px-6 py-2 text-lg font-bold text-white lg:w-fit">
+          <button onClick={downloadCv} className="w-full rounded-md bg-primary px-6 py-2 text-lg font-bold text-primary-foreground lg:w-fit">
             Download CV
           </button>
-          <button className="w-full rounded-md border border-primary bg-background px-6 py-2 text-lg font-bold text-foreground transition duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground lg:w-fit">
+          <button onClick={()=>{
+            document.getElementById('contact').scrollIntoView({behavior:'smooth'})
+          }} className="w-full rounded-md border border-primary bg-background px-6 py-2 text-lg font-bold text-foreground transition duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground lg:w-fit">
             Contact Me
           </button>
         </menu>
