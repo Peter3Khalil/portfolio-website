@@ -9,7 +9,8 @@ import MobileMenu from './MobileMenu';
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const { toggleTheme,theme } = React.useContext(ThemeContext);
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+  const openMenu = () => setIsOpen(true);
   return (
     <header className="sticky dark:border-b dark:border-foreground/20 top-0 z-10 flex h-16 w-full shrink-0 items-center justify-between bg-background px-4 text-foreground shadow-sm md:px-6 lg:px-10">
       <Logo />
@@ -34,12 +35,12 @@ const Header = () => {
         <button onClick={toggleTheme} className="text-2xl">
           {theme === "light" ? <CiLight /> : <CiDark />}
         </button>
-        <button onClick={toggleMenu} className="text-2xl md:hidden">
+        <button onClick={openMenu} className="text-2xl md:hidden">
           <AiOutlineMenu />
         </button>
       </div>
 
-      <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} />
+      <MobileMenu isOpen={isOpen} closeMenu={closeMenu} />
     </header>
   );
 };

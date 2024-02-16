@@ -76,7 +76,7 @@ const About = () => {
         <section className="flex flex-1 flex-col items-start gap-4 text-left">
           <h1 className="text-3xl font-bold text-primary">About me</h1>
           <div className="flex flex-col gap-3">
-            <p>
+            <p className='text-muted-foreground'>
               I am a frontend developer with a passion for web development. I
               have experience in building web applications using modern
               technologies. I am a quick learner and a team player who is always
@@ -89,7 +89,7 @@ const About = () => {
                     onClick={handleActiveTap}
                     key={i}
                     className={cn(
-                      'font-semi cursor-pointer border-b border-transparent transition-all duration-300 ease-in-out hover:border-primary',
+                      'font-semi cursor-pointer border-b-2 border-transparent hover:border-primary',
                       {
                         'border-primary font-bold':
                           activeTap === tap.name.toLowerCase(),

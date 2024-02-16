@@ -2,7 +2,7 @@ import React from 'react';
 import { links, socials } from '../../public/data';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const MobileMenu = ({ isOpen, toggleMenu }) => {
+const MobileMenu = ({ isOpen, closeMenu }) => {
   return (
     <div
       className={`fixed right-0 top-0 z-10 flex h-full w-full transition-all duration-700 ease-in-out ${
@@ -10,15 +10,16 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
       }`}
     >
       {/* Modal */}
-      <div onClick={toggleMenu} className="h-full w-full bg-foreground/5"></div>
+      <div onClick={closeMenu} className="h-full w-full bg-foreground/5"></div>
       <nav className="relative flex h-full w-[70%] shrink-0 flex-col gap-10 bg-background p-6 text-foreground">
-        <button onClick={toggleMenu} className="self-end text-2xl">
+        <button onClick={closeMenu} className="self-end text-2xl">
           <AiOutlineClose />
         </button>
         <ul className="flex flex-col gap-2">
           {links.map((link, i) => (
             <li
               onClick={() => {
+                closeMenu();
                 document
                   .getElementById(link.id)
                   .scrollIntoView({ behavior: 'smooth' });

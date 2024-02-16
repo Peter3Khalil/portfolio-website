@@ -4,16 +4,44 @@ import Container from '../Container';
 import { cn } from '../../utils/helperFunctions';
 
 const Projects = () => {
+  const projects = [
+    {
+      title: 'Where in the world?',
+      description:
+        'Web application that allows users to search for countries and display information about them.',
+      img: '/project1.png',
+      demo: 'https://whereintheworldapp.netlify.app/',
+      source: 'https://github.com/Peter3Khalil/where_in_the_world',
+    },
+    {
+      title: 'Social Media Dashboard',
+      description:
+        'Landing page for a social media dashboard with dark mode and light mode.',
+      img: '/project2.png',
+      demo: 'https://socialmediadashboardpage.netlify.app/',
+      source: 'https://github.com/Peter3Khalil/social_media_dashboard',
+    },
+    {
+      title: 'Advice generator',
+      description:
+        'Web application that allows users to get random advice every time they click the button.',
+      img: '/project3.png',
+      demo: 'https://vocal-baklava-b46e14.netlify.app/',
+      source: 'https://github.com/Peter3Khalil/generate_random_advice'
+    }
+  ];
   return (
     <SectionWrapper id="projects">
       <Container sectionName={'Projects'}>
-        <ul className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
-          {Array.from({ length: 3 }).map((_, index) => (
+        <ul className="flex w-full flex-col flex-wrap items-center justify-center gap-4 md:flex-row">
+          {projects.map((project, index) => (
             <Card
               key={index}
-              title="Project Title"
-              description="DescriptionProject DescriptionProject DescriptionProject Description"
-              img="https://via.placeholder.com/300"
+              title={project.title}
+              description={project.description}
+              img={project.img}
+              demo={project.demo}
+              source={project.source}
             />
           ))}
         </ul>
@@ -22,7 +50,7 @@ const Projects = () => {
   );
 };
 
-const Card = ({ title, description, img }) => {
+const Card = ({ title, description, img, demo, source }) => {
   const Button = ({ children, className }) => (
     <button
       className={cn(
@@ -34,28 +62,32 @@ const Card = ({ title, description, img }) => {
     </button>
   );
   return (
-    <div className="flex w-full bg-background text-foreground hover:bg-accent hover:dark:bg-card cursor-pointer flex-col items-start gap-2 rounded p-4 border dark:border-foreground/20">
+    <div className="flex w-full cursor-pointer flex-col items-start gap-2 rounded border bg-background p-4 text-foreground hover:bg-accent dark:border-foreground/20 hover:dark:bg-card md:w-[350px]">
       <img
         src={img}
         alt={title}
-        className="h-52 w-full rounded-lg object-cover"
+        className="h-52 w-full object-cover object-top"
       />
-      <div className='text-left'>
-        <h3 className="text-xl font-bold text-primary">{title}</h3>
+      <div className="text-left">
+        <h3 className="text-xl font-bold text-primary capitalize">{title}</h3>
         <p className="text-md text-muted-foreground">{description}</p>
       </div>
       <menu className="flex gap-4">
         <li>
-          <Button>Demo</Button>
+          <a href={demo} target="_blank" rel="noreferrer">
+            <Button>Demo</Button>
+          </a>
         </li>
         <li>
-          <Button
-            className={
-              'border border-primary bg-background text-foreground hover:bg-primary hover:text-primary-foreground'
-            }
-          >
-            Source
-          </Button>
+          <a href={source} target="_blank" rel="noreferrer">
+            <Button
+              className={
+                'border border-primary bg-background text-foreground hover:bg-primary hover:text-primary-foreground'
+              }
+            >
+              Source
+            </Button>
+          </a>
         </li>
       </menu>
     </div>
