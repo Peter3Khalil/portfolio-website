@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 const useObserver = ({parentId}) => {
-    const [visibleElement, setVisibleElement] = useState(null)
+    const [visibleElement, setVisibleElement] = useState("hero")
     useEffect(() => {
       if(!parentId) {
         console.log('parent is null')
@@ -14,7 +14,7 @@ const useObserver = ({parentId}) => {
             setVisibleElement(entry.target )
           }
         })
-      }, {threshold:0.5, root: parent});
+      }, {threshold:0.5, root: null, rootMargin: '0px'});
   
       const children = Array.from(parent?.children || []);
       children.forEach(child=>observer.observe(child))
