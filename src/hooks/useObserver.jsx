@@ -14,14 +14,14 @@ const useObserver = ({parentId}) => {
             setVisibleElement(entry.target )
           }
         })
-      }, {threshold:0.5, root: null, rootMargin: '0px'});
+      }, {threshold:0.2, root: null, rootMargin: '0px'});
   
       const children = Array.from(parent?.children || []);
       children.forEach(child=>observer.observe(child))
       return ()=>{
         children.forEach(child=>observer.unobserve(child))
       }
-    },[])
+    },[parentId])
     return { visibleElement,setVisibleElement }
   }
 

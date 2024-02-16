@@ -1,10 +1,8 @@
 import React from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
 import { CiLight, CiDark } from 'react-icons/ci';
 import { links } from '../../public/data';
 import { ThemeContext } from '../pages/_app';
 import Logo from './Logo';
-import MobileMenu from './MobileMenu';
 import { cn } from '../utils/helperFunctions';
 
 const Header = ({ activeLink }) => {
@@ -41,12 +39,7 @@ const Header = ({ activeLink }) => {
         <button onClick={toggleTheme} className="text-2xl">
           {theme === 'light' ? <CiLight /> : <CiDark />}
         </button>
-        <button onClick={openMenu} className="text-2xl md:hidden">
-          <AiOutlineMenu />
-        </button>
       </div>
-
-      <MobileMenu activeLink={activeLink} isOpen={isOpen} closeMenu={closeMenu} />
     </header>
   );
 };
