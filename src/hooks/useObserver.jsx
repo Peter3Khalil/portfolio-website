@@ -14,7 +14,7 @@ const useObserver = ({parentId}) => {
             setVisibleElement(entry.target )
           }
         })
-      }, {threshold:0.5, root: null, rootMargin: '10px'});
+      }, {threshold:0.2, root: null, rootMargin: '5px'});
   
       const children = Array.from(parent?.children || []);
       children.forEach(child=>observer.observe(child))
