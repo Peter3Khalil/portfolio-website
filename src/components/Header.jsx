@@ -25,9 +25,9 @@ const Header = ({ activeLink }) => {
                 }}
                 key={link.id}
                 className={cn(
-                  'flex h-full cursor-pointer items-center justify-center border-b-2 border-transparent hover:border-primary',
+                  'flex h-full cursor-pointer text-muted items-center justify-center border-b-2 border-transparent hover:border-primary',
                   {
-                    'border-primary': activeLink === link.id,
+                    'border-primary font-bold text-foreground': activeLink === link.id,
                   },
                 )}
               >
