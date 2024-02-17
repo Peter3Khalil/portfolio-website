@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="absolute inset-0 m-1 rounded-full bg-primary/20"> </div>
       </div>
 
-      <div className="flex w-[70%] animateLeft flex-col gap-3 lg:order-1 lg:w-[40%] lg:text-left">
+      <div className="flex w-[70%] animateLeft flex-col gap-3 md:gap-6 lg:order-1 lg:w-[40%] lg:text-left">
         <div className="flex flex-col items-center gap-1 lg:items-stretch">
           <h1 className={'flex items-center text-4xl font-bold lg:text-5xl'}>
             Hi, It's<span className="ml-1 text-primary">{user.firstName}</span>
@@ -53,7 +53,7 @@ const Hero = () => {
           ))}
         </ul>
 
-        <menu className="flex flex-col gap-2 lg:flex-row">
+        <menu className="flex flex-col gap-2 md:gap-4 lg:flex-row">
           <button
             onClick={() => {
               document
