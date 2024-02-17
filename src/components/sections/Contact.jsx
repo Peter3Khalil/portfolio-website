@@ -20,7 +20,7 @@ const schema = yup.object().shape({
 });
 const Contact = () => {
   const [isLoading, setIsLoading] = React.useState(false);
-  const { handleSubmit, register, formState,reset } = useForm({
+  const { handleSubmit, register, formState, reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
@@ -37,23 +37,35 @@ const Contact = () => {
       });
       const result = await res.json();
       setIsLoading(false);
-      reset();
-      toast.success(result.message);
+      if (res.status === 200) {
+        toast.success(result.message);
+        reset();
+      } else {
+        toast.error("Something is wrong! Try again");
+      }
     } catch (error) {
-      alert('An error occurred while sending the message.');
+      toast.error("Something is wrong! Try again");
     } finally {
       setIsLoading(false);
     }
   };
   return (
     <SectionWrapper id="contact">
-      <Container
-        sectionName={'Contact Me'}
-        className={'w-full md:w-[60%]'}
-      >
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full">
-          <Input name="name" register={register} error={errors.name && errors.name.message} />
-          <Input name="email" register={register} error={errors.email && errors.email.message} />
+      <Container sectionName={'Contact Me'} className={'w-full md:w-[60%]'}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex w-full flex-col gap-4"
+        >
+          <Input
+            name="name"
+            register={register}
+            error={errors.name && errors.name.message}
+          />
+          <Input
+            name="email"
+            register={register}
+            error={errors.email && errors.email.message}
+          />
 
           <Input
             name="subject"
@@ -65,7 +77,7 @@ const Contact = () => {
               placeholder="Message"
               name="message"
               {...register('message')}
-              className="max-h-[400px] bg-background text-foreground min-h-[200px] w-full rounded border-2 border-primary/40 p-2 outline-none focus:border-primary"
+              className="max-h-[400px] min-h-[200px] w-full rounded border-2 border-primary/40 bg-background p-2 text-foreground outline-none focus:border-primary"
             />
             {errors.message && (
               <span className="text-md capitalize text-destructive dark:text-red-500">
@@ -93,13 +105,11 @@ const Contact = () => {
         closeOnClick
         rtl={false}
         pauseOnHover
-        icon={false}
-        bodyStyle={{borderLeft: '4px solid hsl(var(--primary))',backgroundColor: 'var(--background)',color: 'var(--foreground)',borderRadius: 'var(--radius)'}}
       />
     </SectionWrapper>
   );
 };
-const Input = ({ name = '', error,register }) => {
+const Input = ({ name = '', error, register }) => {
   return (
     <div className="flex w-full flex-col items-start gap-1">
       <input
@@ -107,10 +117,12 @@ const Input = ({ name = '', error,register }) => {
         name={name}
         {...register(name)}
         placeholder={name.charAt(0).toUpperCase() + name.slice(1)}
-        className="w-full bg-background text-foreground rounded border-2 border-primary/40 p-2 outline-none focus:border-primary"
+        className="w-full rounded border-2 border-primary/40 bg-background p-2 text-foreground outline-none focus:border-primary"
       />
       {error && (
-        <span className="text-md capitalize text-destructive dark:text-red-500">{error}</span>
+        <span className="text-md capitalize text-destructive dark:text-red-500">
+          {error}
+        </span>
       )}
     </div>
   );
