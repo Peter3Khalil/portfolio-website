@@ -63,9 +63,6 @@ const Card = ({ title, description, img, demo, source }) => {
   );
   return (
     <div
-      onClick={() => {
-        window.open(demo, '_blank');
-      }}
       className="flex w-full cursor-pointer flex-col items-start gap-2 rounded border bg-background p-4 text-foreground hover:bg-accent/50 dark:border-foreground/20 md:w-[350px]"
     >
       <img
