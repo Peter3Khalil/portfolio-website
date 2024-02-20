@@ -1,5 +1,6 @@
 import React from 'react';
 import { socials, user } from '../../../public/data';
+import Image from 'next/image';
 import SectionWrapper from '../SectionWrapper';
 const Hero = () => {
   const downloadCv = () => {
@@ -16,7 +17,9 @@ const Hero = () => {
       id="hero"
     >
       <div className="relative animateRight h-52 w-52 shrink-0 rounded-full border-[6px] border-primary p-1 lg:order-2 lg:h-96 lg:w-96">
-        <img
+        <Image
+        width={300}
+        height={300}
           src={user.image}
           alt="Profile Picture"
           className="h-full w-full rounded-full object-cover"
@@ -30,12 +33,12 @@ const Hero = () => {
             Hi, It's<span className="ml-1 text-primary">{user.firstName}</span>
           </h1>
 
-          <p className="text-lg font-bold text-muted-foreground md:text-2xl">
+          <h2 className="text-lg font-bold text-muted-foreground md:text-2xl">
             I'm a{' '}
             <span className="border-b-2 border-foreground pb-1 text-foreground">
               <span className="text-primary">{user.title}</span>
             </span>
-          </p>
+          </h2>
         </div>
 
         <p className="text-md text-muted-foreground lg:text-xl">
@@ -46,7 +49,7 @@ const Hero = () => {
         <ul className="flex items-center justify-center gap-2 lg:justify-normal">
           {socials.map((social, i) => (
             <li key={i} className="text-3xl text-primary">
-              <a target="_blank" href={social.link}>
+              <a target="_blank" href={social.link} aria-label={`${social.name} profile link`}>
                 {social.icon}
               </a>
             </li>

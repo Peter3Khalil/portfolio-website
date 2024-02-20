@@ -10,7 +10,7 @@ const Container = ({ sectionName, children, className, ...props }) => {
         className,
       )}
     >
-      <h1 className="text-3xl font-bold text-primary">{sectionName}</h1>
+      <h2 className="text-3xl font-bold text-primary">{sectionName}</h2>
       {children}
     </div>
   );

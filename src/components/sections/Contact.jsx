@@ -57,23 +57,27 @@ const Contact = () => {
           className="flex w-full flex-col gap-4"
         >
           <Input
+            aria-label="Name"
             name="name"
             register={register}
             error={errors.name && errors.name.message}
           />
           <Input
+            aria-label="Email"
             name="email"
             register={register}
             error={errors.email && errors.email.message}
           />
 
           <Input
+            aria-label="Subject"
             name="subject"
             register={register}
             error={errors.subject && errors.subject.message}
           />
           <div className="flex w-full flex-col items-start gap-1">
             <textarea
+              aria-label="Message"
               placeholder="Message"
               name="message"
               {...register('message')}
@@ -109,10 +113,11 @@ const Contact = () => {
     </SectionWrapper>
   );
 };
-const Input = ({ name = '', error, register }) => {
+const Input = ({ name = '', error, register,...props }) => {
   return (
     <div className="flex w-full flex-col items-start gap-1">
       <input
+      {...props}
         type="text"
         name={name}
         {...register(name)}

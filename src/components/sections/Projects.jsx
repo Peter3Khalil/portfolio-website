@@ -2,7 +2,7 @@ import React from 'react';
 import SectionWrapper from '../SectionWrapper';
 import Container from '../Container';
 import { cn } from '../../utils/helperFunctions';
-
+import Image from 'next/image';
 const Projects = () => {
   const projects = [
     {
@@ -62,17 +62,19 @@ const Card = ({ title, description, img, demo, source }) => {
     </button>
   );
   return (
-    <div
+    <li
       className="flex w-full cursor-pointer flex-col items-start gap-2 rounded border bg-background p-4 text-foreground hover:bg-accent/50 dark:border-foreground/20 md:w-[350px]"
     >
-      <img
+      <Image
         src={img}
-        alt={title}
+        alt={"Project Image"}
+        width={350}
+        height={200}
         className="h-52 w-full object-cover object-top"
       />
       <div className="text-left">
-        <h3 className="text-xl font-bold capitalize text-primary">{title}</h3>
-        <p className="text-md text-muted-foreground">{description}</p>
+        <h3 aria-description='Project Title' className="text-xl font-bold capitalize text-primary">{title}</h3>
+        <p aria-description='Project Description' className="text-md text-muted-foreground">{description}</p>
       </div>
       <menu className="flex gap-4">
         <li>
@@ -92,7 +94,7 @@ const Card = ({ title, description, img, demo, source }) => {
           </a>
         </li>
       </menu>
-    </div>
+    </li>
   );
 };
 

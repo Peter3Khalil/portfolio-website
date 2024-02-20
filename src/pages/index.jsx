@@ -5,6 +5,14 @@ import { links } from '../../public/data';
 import useObserver from '../hooks/useObserver';
 import { cn } from '../utils/helperFunctions';
 import Head from 'next/head';
+
+//Implement Lazy Loading for sections
+
+const About = React.lazy(() => import('../components/sections/About'));
+const Contact = React.lazy(() => import('../components/sections/Contact'));
+const Hero = React.lazy(() => import('../components/sections/Hero'));
+const Projects = React.lazy(() => import('../components/sections/Projects'));
+
 const Home = () => {
   const { visibleElement } = useObserver({ parentId: 'container' });
   return (
@@ -29,18 +37,22 @@ const Home = () => {
           property="og:description"
           content="Peter Khalil is a frontend developer who specializes in building high-quality, responsive, and accessible websites and web applications."
         />
-        <link rel="icon" href="/profile.jpg" />
+        <link rel="icon"  href="/profile.jpg" />
       </Head>
       <main className="flex h-[100svh] w-full flex-col bg-background text-foreground transition-all duration-500 ease-in-out">
         <Header activeLink={visibleElement?.id} />
         <div className="mb-14 flex h-auto w-full flex-col overflow-auto md:mb-0">
           <div id="container" className="h-auto">
-            {links.map((link) => (
-              <React.Fragment key={link.id}>{<link.section />}</React.Fragment>
-            ))}
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <Hero />
+              <Projects />
+              <About />
+              <Contact />
+            </React.Suspense>
           </div>
           <Footer />
         </div>
+        <nav>
 
         <ul
           role="navigation"
@@ -68,6 +80,7 @@ const Home = () => {
             );
           })}
         </ul>
+        </nav>
       </main>
     </>
   );

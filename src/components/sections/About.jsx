@@ -2,7 +2,7 @@ import React from 'react';
 import SectionWrapper from '../SectionWrapper';
 import { cn } from '../../utils/helperFunctions';
 import { user } from '../../../public/data';
-
+import Image from 'next/image';
 const About = () => {
   const [activeTap, setActiveTap] = React.useState('skills');
   const taps = [
@@ -65,9 +65,11 @@ const About = () => {
       <div className="flex h-auto min-h-[20vh] w-full flex-col items-center justify-between gap-8 md:flex-row">
         <section className="relative hidden h-[60vh] flex-1  shrink-0 p-1 lg:block">
           
-            <img
+            <Image
               src={user.image}
               alt="Profile Picture"
+              width={300}
+              height={300}
               className="h-full w-full object-contain"
             />
           
