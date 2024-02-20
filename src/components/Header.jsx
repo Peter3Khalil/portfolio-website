@@ -8,7 +8,9 @@ import { cn } from '../utils/helperFunctions';
 const Header = ({ activeLink }) => {
   const { toggleTheme, theme } = React.useContext(ThemeContext);
   return (
-    <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 items-center justify-between bg-background px-4 text-foreground shadow-sm dark:border-b dark:border-foreground/20 md:px-6 lg:px-10">
+    <header style={{
+      backdropFilter: 'saturate(180%) blur(10px)',
+    }} className="sticky top-0 z-10 flex h-16 w-full shrink-0 items-center justify-between bg-background/80 px-4 text-foreground shadow-sm dark:border-b dark:border-foreground/20 md:px-6 lg:px-10">
       <Logo />
       <div className="flex h-full items-center gap-6">
         <nav className="hidden h-full md:block">

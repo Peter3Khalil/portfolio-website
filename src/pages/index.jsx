@@ -36,9 +36,9 @@ const Home = () => {
         />
         <link rel="icon" href="/profile.jpg" />
       </Head>
-      <main className="flex h-[100svh] w-full flex-col bg-background text-foreground transition-all duration-500 ease-in-out">
+      <main className="flex overflow-auto h-[100svh] w-full flex-col bg-background text-foreground transition-all duration-500 ease-in-out">
         <Header activeLink={visibleElement?.id} />
-        <div className="mb-14 flex h-auto w-full flex-col overflow-auto md:mb-0">
+        <div className="mb-14 flex h-auto w-full flex-col md:mb-0">
           <div id="container" className="h-auto">
             <Hero />
             <Projects />
