@@ -22,7 +22,10 @@ const Home = () => {
         />
         <meta
           name="keywords"
-          content="Peter Khalil, Frontend Developer, Web Developer, React Developer, Next.js Developer, JavaScript Developer, HTML Developer, CSS Developer"
+          content="Peter Khalil, Frontend Developer, Web Developer, React Developer, Next.js Developer, JavaScript Developer, HTML Developer, CSS Developer,Typescript Developer
+            JavaScript, HTML, CSS, React, Next.js, Tailwind CSS, Node.js, Express.js, MongoDB, Git, Github, Web Developer, Web Development,Software Development, Software Developer, Frontend Development, Frontend Developer, Full Stack Developer, Full Stack Development,
+            junior frontend developer, junior web developer, junior software developer, junior full stack developer, junior developer, junior software engineer 
+          "
         />
         <meta name="author" content="Peter Khalil" />
 
@@ -34,9 +37,18 @@ const Home = () => {
           property="og:description"
           content="Peter Khalil is a frontend developer who specializes in building high-quality, responsive, and accessible websites and web applications."
         />
+
+        <link rel="canonical" href="https://peterkhalil.netlify.app/" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="apple-touch-icon" href="/profile.jpg" />
+
+        <link rel="icon" type="image/jpg" sizes="32x32" href="/profile.jpg" />
+
         <link rel="icon" href="/profile.jpg" />
       </Head>
-      <main className="flex overflow-auto h-[100svh] w-full flex-col bg-background text-foreground transition-all duration-500 ease-in-out">
+      <main className="flex h-[100svh] w-full flex-col overflow-auto bg-background text-foreground transition-all duration-500 ease-in-out">
         <Header activeLink={visibleElement?.id} />
         <div className="mb-14 flex h-auto w-full flex-col md:mb-0">
           <div id="container" className="h-auto">
