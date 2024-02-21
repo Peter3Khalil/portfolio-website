@@ -20,7 +20,7 @@ const Header = ({ activeLink }) => {
                 onClick={() => {
                   document
                     .getElementById(link.id)
-                    .scrollIntoView({ behavior: 'smooth' });
+                    .scrollIntoView({ behavior: 'smooth', block: 'center'});
                 }}
                 key={link.id}
                 className={cn(
