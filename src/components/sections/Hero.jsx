@@ -61,7 +61,7 @@ const Hero = () => {
             onClick={() => {
               document
                 .getElementById('contact')
-                .scrollIntoView({ behavior: 'smooth' });
+                .scrollIntoView({ behavior: 'smooth', block: 'center'});
             }}
             className="w-full rounded bg-primary px-6 py-2 text-lg font-bold text-primary-foreground lg:w-fit"
           >
