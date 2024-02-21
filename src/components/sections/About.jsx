@@ -63,22 +63,24 @@ const About = () => {
   return (
     <SectionWrapper id="about">
       <div className="flex h-auto min-h-[20vh] w-full flex-col items-center justify-between gap-8 md:flex-row">
-        <section className="relative hidden h-[60vh] flex-1  shrink-0 p-1 lg:block">
-          
+        <section className="hidden flex-1 shrink-0 p-1 lg:block">
+          <div className="relative shrink-0 rounded-full border-[6px] border-primary p-1  lg:h-96 lg:w-96">
             <Image
-              src={user.image}
-              alt="Profile Picture"
               width={300}
               height={300}
-              className="h-full w-full object-contain"
+              src={user.image}
+              alt="Profile Picture"
+              className="h-full w-full rounded-full object-cover"
             />
-          
-          <div className="absolute inset-0 -z-10 h-full w-full rounded-full bg-primary"></div>
+            <div className="absolute inset-0 m-1 rounded-full bg-primary/30">
+             
+            </div>
+          </div>
         </section>
         <section className="flex flex-1 flex-col items-start gap-4 text-left">
           <h1 className="text-3xl font-bold text-primary">About me</h1>
           <div className="flex flex-col gap-3">
-            <p className='text-muted-foreground'>
+            <p className="text-muted-foreground">
               I am a frontend developer with a passion for web development. I
               have experience in building web applications using modern
               technologies. I am a quick learner and a team player who is always

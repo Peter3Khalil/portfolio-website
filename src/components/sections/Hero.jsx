@@ -24,7 +24,7 @@ const Hero = () => {
           alt="Profile Picture"
           className="h-full w-full rounded-full object-cover"
         />
-        <div className="absolute inset-0 m-1 rounded-full bg-primary/20"> </div>
+        <div className="absolute inset-0 m-1 rounded-full bg-primary/30"> </div>
       </div>
 
       <div className="flex w-[70%] animateLeft flex-col gap-3 md:gap-6 lg:order-1 lg:w-[40%] lg:text-left">
